@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Marek - laptop - wybór plików</title>
+		<title>Marek - laptop - file selection/title>
 		<link rel="stylesheet" href="style/wizard_steps.css">
 
 		<script>
@@ -12,13 +12,13 @@
 
 				var name1 = form["input_file"];
 				if (name1 == null || name1.value == null || name1.value == "") {
-					alert("Proszę wybrać plik wejściowy!");
+					alert("Please select an input file!");
 					return false;
 				}
 
 				var name2 = form["output_file"];
 				if (name2 == null || name2.value == null || name2.value == "") {
-					alert("Proszę podać nazwę pliku wyjściowego!");
+					alert("Please provide an output file name!");
 					return false;
 				}
 			}
@@ -29,17 +29,17 @@
 	<body>
 
 		<ol class="wizard-steps">
-			<li class="done"><span>Wybór pliku<i></i></span></li><li><span>Parametry<i></i></span></li><li><span>Konwersja<i></i></span></li>
+			<li class="done"><span>File selection<i></i></span></li><li><span>Parameters<i></i></span></li><li><span>Conversion<i></i></span></li>
 		</ol>
 
-		<h1>Konwerter wideo</h1>
+		<h1>Converter video</h1>
 
 		<form action="step1.php" method="post">
 
-			<h2>Katalog roboczy:</h2>
+			<h2>Working directory:</h2>
 
 			<select name="folder" onchange="this.form.submit();">
-				<option disabled selected> -- wybierz katalog -- </option>
+				<option disabled selected> -- select directory -- </option>
 				<?php echo generateFolderOptions(stripslashes($_POST['folder'])); ?>
 			</select>
 
@@ -49,7 +49,7 @@
 
 			<input type="hidden" name="folder" value="<?php echo stripslashes($_POST['folder']); ?>" />
 
-			<h2>Plik wejściowy:</h2>
+			<h2>Input file:</h2>
 
 			<?php
 			try {
@@ -61,14 +61,14 @@
 			</select>
 
 			<?php
-				} catch (Exception $e) { echo "<font color='red'>Nie udało się odczytać katalogu!</font>\n"; }
+				} catch (Exception $e) { echo "<font color='red'>Failed to read directory!</font>\n"; }
 			?>
 			
-			<h2>Plik wyjściowy:</h2>
+			<h2>Output file:</h2>
 
 			<p><input type="text" name="output_file" /></p>
 
-			<p><input type="submit" value="Dalej >" /></p>
+			<p><input type="submit" value="Next >" /></p>
 
 		</form>
 
