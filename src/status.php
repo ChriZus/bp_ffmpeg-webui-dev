@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="refresh" content="5" />
-		<title>Marek - laptop - konwersja wideo</title>
+		<title>Marek - laptop - video conversion</title>
 		<link rel="stylesheet" href="style/wizard_steps.css">
 
 		<script>
@@ -18,13 +18,13 @@
 	<body onload="scrollTextArea()">
 
 		<ol class="wizard-steps">
-			<li class="done"><span><a href="step1.php">Wybór pliku</a><i></i></span></li><li class="done"><span>Parametry<i></i></span></li><li class="done"><span>Konwersja<i></i></span></li>
+			<li class="done"><span><a href="step1.php">File selection</a><i></i></span></li><li class="done"><span>Options<i></i></span></li><li class="done"><span>Conversion<i></i></span></li>
 		</ol>
 
 		<p>Status: </p>
 
 		<?php
-			$content = "Proszę czekać...";
+			$content = "Please wait...";
 			try {
 				if (file_exists($LOG_FILE_NAME)) {
 					$content = htmlentities(file_get_contents($LOG_FILE_NAME));
