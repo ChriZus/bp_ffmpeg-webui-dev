@@ -40,16 +40,16 @@
 	<body onload="generateCommand()">
 
 		<ol class="wizard-steps">
-			<li class="done"><span><a href="step1.php">Wybór pliku</a><i></i></span></li><li class="done"><span>Parametry<i></i></span></li><li><span>Konwersja<i></i></span></li>
+			<li class="done"><span><a href="step1.php">File selection</a><i></i></span></li><li class="done"><span>Parameters<i></i></span></li><li><span>Conversion<i></i></span></li>
 		</ol>
 
 		<p>
 			Folder: <?php echo stripslashes($_POST['folder']) ?>.<br/>
-			Plik we: <?php echo stripslashes($_POST['input_file']) ?>.<br/>
-			Plik wy: <?php echo stripslashes($_POST['output_file']) ?>.
+			Input file: <?php echo stripslashes($_POST['input_file']) ?>.<br/>
+			Output file: <?php echo stripslashes($_POST['output_file']) ?>.
 		</p>
 
-		<h2>Parametry video:</h2>
+		<h2>Video options:</h2>
 
 		Bitrate:
 
@@ -70,7 +70,7 @@
 
 		kbps
 
-		<h2>Parametry audio:</h2>
+		<h2>Audio options:</h2>
 
 		Bitrate:
 
@@ -97,11 +97,11 @@
 			<input type="hidden" name="input_file" value="<?php echo stripslashes($_POST['input_file']); ?>" />
 			<input type="hidden" name="output_file" value="<?php echo stripslashes($_POST['output_file']); ?>" />
 
-			<h2>Komenda:</h2>
+			<h2>Command:</h2>
 			
 			<textarea name="command" cols="50" rows="5"></textarea>
 
-			<p><input type="submit" value="Dalej >" /></p>
+			<p><input type="submit" value="Next >" /></p>
 		</form>
 
 	</body>
